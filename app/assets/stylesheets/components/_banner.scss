@@ -1,0 +1,12 @@
+.banner {
+  background-size: cover;
+  background-position: bottom;
+  height: 40vh;
+  display: flex;
+  margin-bottom: 16px;
+  .center {
+    margin: auto;
+    text-align: center;
+    color: white;
+  }
+}

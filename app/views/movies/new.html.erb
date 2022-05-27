@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="form">
+    <h2>Add a new movie</h2>
+
+    <%= simple_form_for([@list, @movie]) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :overview %>
+      <%= f.input :poster_url %>
+      <%= f.input :rating %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
