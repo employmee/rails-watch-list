@@ -3,11 +3,8 @@
     <h2>Add a new movie</h2>
 
     <%= simple_form_for([@list, @bookmark]) do |f| %>
-      <%= f.input :title %>
-      <%= f.input :overview %>
-      <%= f.input :poster_url %>
-      <%= f.input :rating %>
       <%= f.input :comment %>
+      <%= f.input :movie_id, as: :select, collection: Movie.all %>
       <%= f.submit %>
     <% end %>
   </div>
