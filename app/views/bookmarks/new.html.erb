@@ -2,11 +2,12 @@
   <div class="form">
     <h2>Add a new movie</h2>
 
-    <%= simple_form_for([@list, @movie]) do |f| %>
+    <%= simple_form_for([@list, @bookmark]) do |f| %>
       <%= f.input :title %>
       <%= f.input :overview %>
       <%= f.input :poster_url %>
       <%= f.input :rating %>
+      <%= f.input :comment %>
       <%= f.submit %>
     <% end %>
   </div>
