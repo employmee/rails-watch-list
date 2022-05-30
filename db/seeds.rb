@@ -8,13 +8,14 @@
 puts "Cleaning database..."
 #Movie.destroy_all
 List.destroy_all
+Movie.destroy_all
 
 puts "Creating movies"
 10.times do
   @list = List.create(name: Faker::Book.genre)
   puts @list.name
 
-  10.times do
+  20.times do
     @movie = Movie.create(
       title: Faker::Movie.title,
       overview: Faker::Quote.famous_last_words,

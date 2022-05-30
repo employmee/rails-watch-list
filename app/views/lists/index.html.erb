@@ -1,7 +1,9 @@
 <div class="banner" style="background-image: url(<%= asset_url('movie-banner.jpg') %>)">
   <div class="center">
     <h1>Save any kind of movies</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <p>
+      <span data-controller="typed-js"></span>
+    </p>
   </div>
 </div>
 
@@ -26,7 +28,12 @@
 
     <% @lists.each do |list| %>
       <%= link_to list do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random)">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url(<% if list.poster.attached? %>
+          '<%= cl_image_path list.poster.key, crop: :fill %>'
+        <% else %>
+          https://source.unsplash.com/random
+        <% end %>)">
           <%= list.name %>
         </div>
       <% end %>
